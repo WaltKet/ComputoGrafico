@@ -63,17 +63,17 @@ void main()                                                                   \n
 void CreateTriangle()
 {
 	unsigned int indices[] = {
-		0, 3, 1,
+		0, 3,1,
 		1, 3, 2,
 		2, 3, 0,
 		0, 1, 2
 	};
 
 	GLfloat vertices[] = {
-		-1.0f, -1.0f, 0.0f,
-		0.0f, -1.0f, 1.0f,
-		1.0f, -1.0f, 0.0f,
-		0.0f, 1.0f, 0.0f
+		-1.0f, -1.0f, 0.0f,//indice 0
+		0.0f, -1.0f, 1.0f,//indice 1
+		1.0f, -1.0f, 0.0f,//indice 2
+		0.0f, 1.0f, 0.0f//indice 3
 	};
 
 	glGenVertexArrays(1, &VAO);//guarda en un objeto todos los buffers activos, esto definira un mesh
