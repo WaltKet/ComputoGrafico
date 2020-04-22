@@ -28,8 +28,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -126,33 +126,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CGE\Base\GameState.cpp" />
-    <ClCompile Include="CGE\Base\GameStateManager.cpp" />
-    <ClCompile Include="CGE\Base\Platform.cpp" />
-    <ClCompile Include="CGE\Base\ShaderManager.cpp" />
-    <ClCompile Include="CGE\Graphic\Camera.cpp" />
-    <ClCompile Include="CGE\Graphic\Mesh.cpp" />
-    <ClCompile Include="CGE\Graphic\Shader.cpp" />
+    <ClCompile Include="BCE\GameState.cpp" />
+    <ClCompile Include="BCE\GameStateManager.cpp" />
+    <ClCompile Include="BCE\Mesh.cpp" />
+    <ClCompile Include="BCE\Platform.cpp" />
+    <ClCompile Include="BCE\Shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CGE\Base\GameState.h" />
-    <ClInclude Include="CGE\Base\GameStateManager.h" />
-    <ClInclude Include="CGE\Base\Platform.h" />
-    <ClInclude Include="CGE\Base\ShaderManager.h" />
-    <ClInclude Include="CGE\Graphic\Camera.h" />
-    <ClInclude Include="CGE\Graphic\Mesh.h" />
-    <ClInclude Include="CGE\Graphic\Shader.h" />
+    <ClInclude Include="BCE\GameState.h" />
+    <ClInclude Include="BCE\GameStateManager.h" />
+    <ClInclude Include="BCE\Mesh.h" />
+    <ClInclude Include="BCE\Platform.h" />
+    <ClInclude Include="BCE\Shader.h" />
     <ClInclude Include="Menu.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Shaders\Default\default.frag" />
-    <None Include="Assets\Shaders\Default\default.vert" />
-    <None Include="Assets\Shaders\gouraud-shader.frag" />
-    <None Include="Assets\Shaders\gouraud-shader.vert" />
-    <None Include="Assets\Shaders\OneColor.frag" />
-    <None Include="Assets\Shaders\OneColor.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
