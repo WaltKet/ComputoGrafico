@@ -68,6 +68,7 @@ void Menu::Init()
 void Menu::LoadModels()
 {
 	unsigned int indices[] = {
+<<<<<<< HEAD
 				0,1,2,
 				2,3,0,
 				0,4,3,
@@ -87,10 +88,47 @@ void Menu::LoadModels()
 		1.0, -1.0, -1.0,1.0f, 0.0f,		0.0f, 0.0f, 0.0f,1.0f, 0.0f, 0.0f,//5
 		1.0,  1.0, -1.0,1.0f, 1.0f,		0.0f, 0.0f, 0.0f,1.0f, 0.0f, 0.0f,//6
 		-1.0,  1.0, -1.0,0.0f, 1.0f,		0.7f, -0.7f, 0.0f,1.0f, 0.0f, 0.0f,//7
+=======
+	0,1,2,
+	2,3,1,
+	0,4,5,
+	1,5,0,
+	5,6,4,
+	6,7,5,
+	2,6,1,
+	1,5,6,
+	2,6,7,
+	3,7,2,
+	0,4,3,
+	3,7,0
+		};
+
+	GLfloat vertices[] = {
+	//0.0f, 0.0f,0.0f,
+	//-0.6f, 0.81f, 0.0f,
+	//-1.4f, 0.23f, 0.0f,
+	//-0.8f, -0.5f, 0.0f,
+	//0.0f, 0.0f,1.0f,
+	//-0.6f, 0.81f, 1.0f,
+	//-1.4f, 0.23f, 1.0f,
+	//-0.8f, -0.5f, 1.0f,
+		0.0f,0.0f,0.0f,
+		1.0f,0.0f,0.0f,
+		0.0f,1.0f,0.0f,
+		1.0f,1.0f,0.0f,
+		0.0f,0.0f,0.38f,
+		1.0f,0.0f,0.38f,
+		0.0f,1.0f,0.38f,
+		1.0f,1.0f,0.38f
+>>>>>>> Se dibuja un cubo 1x1x1
 	};
 	calcAverageNormals(indices, 18, vertices, 88, 11, 5);
 	Mesh *obj1 = new Mesh();
+<<<<<<< HEAD
 	obj1->CreateMesh(vertices, indices, 88, 18, 11);
+=======
+	obj1->CreateMesh(vertices, indices, 24, 36);
+>>>>>>> Se dibuja un cubo 1x1x1
 	meshList.push_back(obj1);
 }
 void Menu::LoadShaders()
@@ -104,8 +142,13 @@ void Menu::Draw()
 	shaderManager->Activate("OneColor");
 	shaderManager->draw();
 	glm::mat4 model(1);
+<<<<<<< HEAD
 	GLint uniformModel = shaderManager->GetModelLocation();
+=======
+	
+>>>>>>> Se dibuja un cubo 1x1x1
 	model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
+	model = glm::rotate(model, 100.0f, glm::vec3(1.0f, 1.0f, 0.0f));
 	model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
 	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 	meshList[0]->RenderMesh();
