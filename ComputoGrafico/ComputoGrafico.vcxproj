@@ -126,20 +126,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BCE\GameState.cpp" />
-    <ClCompile Include="BCE\GameStateManager.cpp" />
-    <ClCompile Include="BCE\Mesh.cpp" />
-    <ClCompile Include="BCE\Platform.cpp" />
-    <ClCompile Include="BCE\Shader.cpp" />
+    <ClCompile Include="CGE\Base\GameState.cpp" />
+    <ClCompile Include="CGE\Base\GameStateManager.cpp" />
+    <ClCompile Include="CGE\Base\Platform.cpp" />
+    <ClCompile Include="CGE\Base\ShaderManager.cpp" />
+    <ClCompile Include="CGE\Graphic\Camera.cpp" />
+    <ClCompile Include="CGE\Graphic\Mesh.cpp" />
+    <ClCompile Include="CGE\Graphic\Shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BCE\GameState.h" />
-    <ClInclude Include="BCE\GameStateManager.h" />
-    <ClInclude Include="BCE\Mesh.h" />
-    <ClInclude Include="BCE\Platform.h" />
-    <ClInclude Include="BCE\Shader.h" />
+    <ClInclude Include="CGE\Base\GameState.h" />
+    <ClInclude Include="CGE\Base\GameStateManager.h" />
+    <ClInclude Include="CGE\Base\Platform.h" />
+    <ClInclude Include="CGE\Base\ShaderManager.h" />
+    <ClInclude Include="CGE\Graphic\Camera.h" />
+    <ClInclude Include="CGE\Graphic\Mesh.h" />
+    <ClInclude Include="CGE\Graphic\Shader.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
