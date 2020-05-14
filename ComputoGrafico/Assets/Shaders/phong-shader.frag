@@ -1,14 +1,9 @@
 #version 330
 
-layout (location = 0) in vec3 pos;
-layout (location = 1) in vec2 tex;
-layout (location = 2) in vec3 norm;
-out vec4 vCol;
-out vec2 TexCoord;
+in vec3 FragPos;
+in vec3 Normal1;
+out vec4 colour;
 
-uniform mat4 model;
-uniform mat4 projection;
-uniform mat4 view;
 uniform vec3 myLightPosition;
 
 vec3 ADSLightModel( in vec3 myNormal, in vec3 myPosition )
@@ -40,11 +35,7 @@ vec3 ADSLightModel( in vec3 myNormal, in vec3 myPosition )
 	return clamp( ambient + diffuse + specular, 0.0, 1.0);
 }
 
-void main( )
+void main()
 {
-	vec3 transNorm = normalize(  norm );
-	vec3 ECpos = ( model * vec4(pos, 1.0) ).xyz;
-	vCol = vec4(ADSLightModel( transNorm, ECpos ), 1.0);
-	gl_Position = projection * view * model * vec4(pos, 1.0);
-	TexCoord = tex;
+	colour = vec4(ADSLightModel(Normal1,FragPos), 1.0f);
 }

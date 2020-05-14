@@ -39,7 +39,15 @@ void Camera::keyControl(std::map<int, bool> keys, GLfloat deltaTime)
 	{
 		position += right * velocity;
 	}
+	if (keys[GLFW_KEY_Z])
+	{
+		shaderChange = false;
+	}
+	else {
+		shaderChange = true;
+	}
 }
+
 
 glm::vec3 Camera::getCameraPosition()
 {
@@ -74,7 +82,10 @@ void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 
 	update();
 }
-
+bool Camera::getShaderChange()
+{
+	return shaderChange;
+}
 glm::mat4 Camera::calculateViewMatrix()
 {
 	return glm::lookAt(position, position + front, up);

@@ -42,6 +42,24 @@ GLint ShaderManager::GetModelLocation()
 	return uniformModel;
 }
 
+GLint ShaderManager::GetColor1()
+{
+	return color1;
+}
+
+GLint ShaderManager::GetColor2()
+{
+	return color2;
+}
+GLint ShaderManager::GetLightPos()
+{
+	return lightPos;
+}
+GLint ShaderManager::GetPlayerPosition()
+{
+	return playerPos;
+}
+
 GLint ShaderManager::GetSpecularIntensityLocation()
 {
 	return uniformSpecularIntensity;
@@ -89,5 +107,9 @@ void ShaderManager::Activate(const std::string& name)
 		uniformModel = currentShader->GetModelLocation();
 		uniformProjection = currentShader->GetProjectionLocation();
 		uniformView = currentShader->GetViewLocation();
+		color1 = currentShader->GetColor1();
+		color2 = currentShader->GetColor2();
+		playerPos = currentShader->GetPlayerPosition();
+		lightPos = currentShader->GetLightPos();
 	}
 }

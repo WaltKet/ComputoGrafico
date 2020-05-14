@@ -146,6 +146,20 @@
     <ClInclude Include="CGE\Graphic\Shader.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\Default\default.frag" />
+    <None Include="Assets\Shaders\Default\default.vert" />
+    <None Include="Assets\Shaders\distance-color.frag" />
+    <None Include="Assets\Shaders\distance-color.vert" />
+    <None Include="Assets\Shaders\gouraud-shader.frag" />
+    <None Include="Assets\Shaders\gouraud-shader.vert" />
+    <None Include="Assets\Shaders\OneColor.frag" />
+    <None Include="Assets\Shaders\OneColor.vert" />
+    <None Include="Assets\Shaders\phong-shader.frag" />
+    <None Include="Assets\Shaders\phong-shader.vert" />
+    <None Include="Assets\Shaders\toon-shader.frag" />
+    <None Include="Assets\Shaders\toon-shader.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

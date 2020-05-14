@@ -80,6 +80,13 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode)
 	uniformProjection = glGetUniformLocation(shaderID, "projection");
 	uniformModel = glGetUniformLocation(shaderID, "model");
 	uniformView = glGetUniformLocation(shaderID, "view");
+
+	color1 = glGetUniformLocation(shaderID, "color1");
+	color2 = glGetUniformLocation(shaderID, "color2");
+
+	myLightPos = glGetUniformLocation(shaderID, "myLightPosition");
+
+	playerPosition = glGetUniformLocation(shaderID, "playerPosition");
 }
 
 GLuint Shader::GetProjectionLocation()
@@ -94,7 +101,22 @@ GLuint Shader::GetViewLocation()
 {
 	return uniformView;
 }
-
+GLuint Shader::GetColor1()
+{
+	return color1;
+}
+GLuint Shader::GetColor2()
+{
+	return color2;
+}
+GLuint Shader::GetLightPos()
+{
+	return myLightPos;
+}
+GLuint Shader::GetPlayerPosition()
+{
+	return playerPosition;
+}
 void Shader::UseShader()
 {
 	glUseProgram(shaderID);

@@ -13,6 +13,7 @@ public:
 
 	void keyControl(std::map<int, bool> keys, GLfloat deltaTime);
 	void mouseControl(GLfloat xChange, GLfloat yChange);
+	bool getShaderChange();
 
 	glm::mat4 calculateViewMatrix();
 	glm::vec3 getCameraPosition();
@@ -25,7 +26,7 @@ private:
 	glm::vec3 up;
 	glm::vec3 right;
 	glm::vec3 worldUp;
-
+	bool shaderChange;
 	GLfloat yaw;
 	//GLfloat pitch;
 

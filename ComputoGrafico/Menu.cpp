@@ -51,6 +51,11 @@ void Menu::Init()
 	shaderManager->initShader(&camera);
 	shaderManager->LoadShaders("OneColor", "Assets/Shaders/OneColor.vert", "Assets/Shaders/OneColor.frag");
 	shaderManager->LoadShaders("gouraud-shader", "Assets/Shaders/gouraud-shader.vert", "Assets/Shaders/gouraud-shader.frag");
+	shaderManager->LoadShaders("phong-shader", "Assets/Shaders/phong-shader.vert", "Assets/Shaders/phong-shader.frag");
+	shaderManager->LoadShaders("distance-color", "Assets/Shaders/distance-color.vert", "Assets/Shaders/distance-color.frag");
+	shaderManager->LoadShaders("toon-shader", "Assets/Shaders/toon-shader.vert", "Assets/Shaders/toon-shader.frag");
+
+
 	LoadModels();
 	
 }
@@ -63,7 +68,15 @@ void Menu::LoadModels()
 				0,4,3,
 				4,7,3,
 				3,7,6,
-				6,3,2
+				6,3,2,
+				1,5,0,
+				0,5,4,
+				1,5,6,
+				1,6,2,
+				7,5,6,
+				5,4,7
+				
+
 	};
 
 	GLfloat vertices[] = {
@@ -78,9 +91,11 @@ void Menu::LoadModels()
 		1.0,  1.0, -1.0,1.0f, 1.0f,		0.0f, 0.0f, 0.0f,1.0f, 0.0f, 0.0f,//6
 		-1.0,  1.0, -1.0,0.0f, 1.0f,		0.7f, -0.7f, 0.0f,1.0f, 0.0f, 0.0f,//7
 	};
-	calcAverageNormals(indices, 18, vertices, 88, 11, 5);
+	//calcAverageNormals(indices, 6, vertices, 88, 11, 5);
+	calcAverageNormals(indices, 36, vertices, 88, 11, 5);
 	Mesh *obj1 = new Mesh();
-	obj1->CreateMesh(vertices, indices, 88, 18, 11);
+	//obj1->CreateMesh(vertices, indices, 88, 6, 11);
+	obj1->CreateMesh(vertices, indices, 88, 36, 11);
 	meshList.push_back(obj1);
 }
 void Menu::LoadShaders()
@@ -91,23 +106,45 @@ void Menu::LoadShaders()
 void Menu::Draw()
 {
 	platform->RenderClear();
-	shaderManager->Activate("gouraud-shader");
+	if (camera.getShaderChange())
+	{
+		shaderManager->Activate("gouraud-shader");
+	}
+	else {
+		shaderManager->Activate("phong-shader");
+	}
 	shaderManager->draw();
 	glm::mat4 model(1);
 	GLint uniformModel = shaderManager->GetModelLocation();
+	GLint lightpos = shaderManager->GetLightPos();
 	model = glm::translate(model, glm::vec3(0.0f, 0.0f, -2.5f));
-	model = glm::rotate(model, 100.0f, glm::vec3(1.0f, 1.0f, 0.0f));
+	//model = glm::rotate(model, 100.0f, glm::vec3(1.0f, 1.0f, 0.0f));*/
 	model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
 	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+	glUniform3f(lightpos, 0.0f, lightangle, 0.2f);
+	if (lightangle < 6)
+	{
+		lightangle += 0.0009f;
+	}
+	if (lightangle >= 6)
+	{
+		lightangle = 0;
+	}
 	meshList[0]->RenderMesh();
 
 
-	shaderManager->Activate("default");
+	shaderManager->Activate("distance-color");
 	shaderManager->draw();
 	uniformModel = shaderManager->GetModelLocation();
+	GLint color1 = shaderManager->GetColor1();
+	GLint color2 = shaderManager->GetColor2();
+	GLint playerPos = shaderManager->GetPlayerPosition();
 	model = glm::translate(model, glm::vec3(10.0f, 0.0f, -8.5f));
 	model = glm::scale(model, glm::vec3(0.7f, 0.4f, 1.0f));
 	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+	glUniform3f(color1, 0.0f, 1.0f, 0.0f);
+	glUniform3f(color2, 0.0f, 0.0f, 1.0f);
+	glUniform3f(playerPos, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
 	meshList[0]->RenderMesh();
 
 	platform->RenderPresent();

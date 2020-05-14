@@ -82,4 +82,42 @@
       <Filter>CGE\Graphic</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\gouraud-shader.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\gouraud-shader.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\OneColor.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\OneColor.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\default.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\Default\default.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\phong-shader.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\phong-shader.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\distance-color.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\distance-color.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\toon-shader.frag">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+    <None Include="Assets\Shaders\toon-shader.vert">
+      <Filter>Assets\Shaders\Default</Filter>
+    </None>
+  </ItemGroup>
 </Project>

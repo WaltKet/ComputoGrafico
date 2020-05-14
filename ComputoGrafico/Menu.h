@@ -14,6 +14,8 @@ private:
 	std::vector<Mesh*> meshList;
 	ShaderManager* shaderManager;
 	Camera camera;
+	float lightangle = 0;
+	bool key;
 public:
 	Menu();
 	~Menu();
@@ -23,6 +25,7 @@ public:
 	bool MouseInput(int x, int y, bool leftbutton);
 	void Update() override;
 	void Close() override;
+
 	void LoadShaders();
 	void LoadModels();
 };
