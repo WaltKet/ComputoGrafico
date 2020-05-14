@@ -55,6 +55,18 @@
     <ClCompile Include="CGE\Graphic\Shader.cpp">
       <Filter>CGE\Graphic</Filter>
     </ClCompile>
+    <ClCompile Include="CGE\Base\Transform.cpp">
+      <Filter>CGE\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="CGE\Graphic\BaseModel.cpp">
+      <Filter>CGE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CGE\Graphic\Model.cpp">
+      <Filter>CGE\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CGE\Graphic\Texture.cpp">
+      <Filter>CGE\Graphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -79,6 +91,18 @@
       <Filter>CGE\Graphic</Filter>
     </ClInclude>
     <ClInclude Include="CGE\Graphic\Shader.h">
+      <Filter>CGE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CGE\Base\Transform.h">
+      <Filter>CGE\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="CGE\Graphic\BaseModel.h">
+      <Filter>CGE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CGE\Graphic\Model.h">
+      <Filter>CGE\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CGE\Graphic\Texture.h">
       <Filter>CGE\Graphic</Filter>
     </ClInclude>
   </ItemGroup>
